@@ -75,7 +75,8 @@ hierarchyC packageUrl = void $ mapAccumC f (Nothing, Nothing)
 
         isGhc = "~ghc" `isInfixOf` packageUrl || "/" `isSuffixOf` packageUrl
 
-        hseToItem_ x = hseToItem x `orIfNull` error ("hseToItem failed, " ++ pretty x)
+        -- hseToItem_ x = hseToItem x `orIfNull` error ("hseToItem failed, " ++ pretty x)
+        hseToItem_ = hseToItem
         infix 1 `orIfNull`
         orIfNull x y = if null x then y else x
 
